@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Code Details</div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputCode" class="col-sm-2 control-label">Code</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputCode" ng-model="details.code" placeholder="Code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputProduct" class="col-sm-2 control-label">Product</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputProduct" ng-model="details.product" placeholder="Product">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSuburb" class="col-sm-2 control-label">Suburb</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputSuburb" ng-model="details.suburb" placeholder="Suburb">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSuburb" class="col-sm-2 control-label">Time</label>
+                        <div class="col-sm-10">
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup ng-model="details.time" is-open="status.opened" ng-required="true" close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                       <button class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
