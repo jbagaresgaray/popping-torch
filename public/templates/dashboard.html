@@ -18,30 +18,59 @@
     </div>
 </nav>
 <div class="container">
-    <div class="starter-template">
-        <table class="table table-hover" id="codeTable">
-            <thead>
-                <tr>
-                    <th>Code</th>
-                    <th>Product</th>
-                    <th>Suburb</th>
-                    <th>Time</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="code in codes">
-                    <td>{{code.row.code}}</td>
-                    <td>{{code.row.product}}</td>
-                    <td>{{code.row.suburb}}</td>
-                    <td>{{code.row.time | amDateFormat:'DD-MMM-YYYY'}}</td>
-                    <td>
-                        <a href="#/main/dashboard/{{code.key}}" class="update-icon btn btn-primary btn-xs"> <i class="glyphicon glyphicon-pencil"></i></a>
-                        <a href="#/main/dashboard/{{code.key}}" class="delete-icon btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="starter-template" ng-init="initCodes()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6 form-group pull-left">
+                    <button class="btn btn-primary" type="button" ng-click="openModal()">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add
+                    </button>
+                    <button class="btn btn-success" type="button" ng-click="initCodes()">
+                        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Refresh
+                    </button>
+                </div>
+                <div class="col-md-6 pull-right form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="txtSearch" placeholder="Search" aria-describedby="Search">
+                        <span class="input-group-btn">
+                        <button class="btn btn-success" type="button">Search</button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div cg-busy="myPromise"></div>
+                        <table class="table table-hover" id="codeTable">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Product</th>
+                                    <th>Suburb</th>
+                                    <th>Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="code in codes | filter:txtSearch ">
+                                    <td>{{code.row.code}}</td>
+                                    <td>{{code.row.product}}</td>
+                                    <td>{{code.row.suburb}}</td>
+                                    <td>{{code.row.time | amDateFormat:'DD-MMM-YYYY'}}</td>
+                                    <td>
+                                        <a href="#/main/dashboard/{{code.key}}" class="update-icon btn btn-primary btn-xs"> <i class="glyphicon glyphicon-pencil"></i></a>
+                                        <a href="" ng-click="confirmDelete(code.key)" class="delete-icon btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- /.container -->

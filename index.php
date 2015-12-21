@@ -16,6 +16,10 @@
     <link href="bower_components/ui-select/dist/select.min.css" rel="stylesheet">
     <link href="bower_components/angular-busy/dist/angular-busy.css" rel="stylesheet"/>
     <link href="bower_components/angular-loading-bar/build/loading-bar.css" rel="stylesheet"/>
+    <link href="bower_components/angular-busy/dist/angular-busy.min.css" rel="stylesheet"/>
+    <link href="bower_components/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet"/>
+    <link href="bower_components/ng-dialog/css/ngDialog.min.css" rel="stylesheet"/>
+    <link href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet"/>
 
     <!-- Custom styles for this template -->
     <link href="public/css/starter-template.css" rel="stylesheet">
@@ -38,11 +42,16 @@
     <script src="bower_components/ui-select/dist/select.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
     <script src="bower_components/angular-moment/angular-moment.min.js"></script>
     <script src="bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>
-    <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+    <script src="bower_components/angular-busy/dist/angular-busy.min.js"></script>
+    <script src="bower_components/angular-validation/dist/angular-validation.js"></script>
+    <script src="bower_components/angular-validation/dist/angular-validation-rule.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/ng-dialog/js/ngDialog.min.js"/></script>
 
 
     <!-- Custom javascript for this app -->

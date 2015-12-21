@@ -12,24 +12,40 @@
 
 	switch ($method) {
 		case 'PUT':
-			$data=parse_str( file_get_contents( 'php://input' ), $_PUT );
-			foreach ($_PUT as $key => $value){
-					unset($_PUT[$key]);
-					$_PUT[str_replace('amp;', '', $key)] = $value;
-			}
-			$_REQUEST = array_merge($_REQUEST, $_PUT);
-
-			
+			$data=file_get_contents( 'php://input' );
+	  		$res = json_decode($data);
+	  		$test = array(
+  				"code" => $res->code,
+  				"product" => $res->product,
+  				"suburb" => $res->suburb,
+  				"time" => $res->time
+  			);
+  			$id = $res->id;
+		  	$value = $firebaseConfig->updateFirebaseValue('/codes/'.$id,$test,$firebase);
+			print_r($value);
 	    	break;
 	  	case 'POST':
-			
+	  		$data=file_get_contents( 'php://input' );
+	  		$res = json_decode($data);
+	  		$test = array(
+  				"code" => $res->code,
+  				"product" => $res->product,
+  				"suburb" => $res->suburb,
+  				"time" => $res->time
+  			);
+  			$value = $firebaseConfig->pushFirebaseValue('/codes',$test,$firebase);
+  			print_r($value);
 	    	break;
 	  	case 'GET':
 		  	$value = $firebaseConfig->getFirebaseValue($config->DEFAULT_PATH,$firebase);
 			print_r($value);
 		    break;
 	  	case 'DELETE':
-		  	
+		  	if(!empty($_GET) && isset($_GET['id'])){
+		  		$id = $_GET['id'];
+		  		$value = $firebaseConfig->deleteFirebaseValue('/codes/'.$id,$firebase);
+  				print_r($value);
+		  	}
 	    	break;
 	  default:
 	    break;

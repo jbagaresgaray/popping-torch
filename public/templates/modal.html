@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="Form" method="POST">
+        <div class="form-group">
+            <label for="inputCode" class="col-sm-2 control-label">Code</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputCode" ng-model="details.code" placeholder="Code" validator="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputProduct" class="col-sm-2 control-label">Product</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputProduct" ng-model="details.product" placeholder="Product" validator="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputSuburb" class="col-sm-2 control-label">Suburb</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputSuburb" ng-model="details.suburb" placeholder="Suburb" validator="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputSuburb" class="col-sm-2 control-label">Time</label>
+            <div class="col-sm-10">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup ng-model="details.time" is-open="status.opened" ng-required="true" close-text="Close" validator="required"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" validation-submit="Form" ng-click="saveCode()">Save</button>
+    <button class="btn btn-warning" validation-reset="Form" ng-click="cancel()">Cancel</button>
+</div>

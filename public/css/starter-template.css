@@ -6,7 +6,7 @@ body {
 
 .starter-template {
     padding: 40px 15px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .form-signin {
@@ -48,4 +48,20 @@ body {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+.validation-valid {
+    color: #0074D9;
+}
+
+.ng-valid.ng-dirty {
+    color: #0074D9;
+}
+
+.validation-invalid {
+    color: #FF4136;
+}
+
+.ng-invalid.ng-dirty {
+    color: #FF4136;
 }
