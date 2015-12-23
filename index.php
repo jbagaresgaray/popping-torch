@@ -57,6 +57,8 @@
     <!-- Custom javascript for this app -->
     <script src="public/js/app.js"></script>
     <script src="public/js/controllers.js"></script>
+    <script src="public/js/authcontroller.js"></script>
     <script src="public/js/services.js"></script>
   </body>
 </html>
+

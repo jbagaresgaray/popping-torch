@@ -4,8 +4,13 @@ angular
         $stateProvider
             .state('login', {
                 url: '/login',
-                templateUrl: 'public/templates/login/login.html',
+                templateUrl: 'public/templates/auth/login.html',
                 controller: 'loginCtrl'
+            })
+            .state('signup', {
+                url: '/signup',
+                templateUrl: 'public/templates/auth/signup.html',
+                controller: 'signupCtrl'
             })
             .state('main', {
                 url: '/main',

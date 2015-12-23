@@ -65,3 +65,13 @@ body {
 .ng-invalid.ng-dirty {
     color: #FF4136;
 }
+
+.signup {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.signup .form-control {
+    margin-bottom: 10px;
+}
