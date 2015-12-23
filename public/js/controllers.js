@@ -22,7 +22,7 @@ angular
             }).then(function(value) {
                 Code.deleteCode(id).then(function(response) {
                     console.log('response: ', response);
-                    toastr.success('Deleted...', 'Record Successfully Deleted');
+                    toastr.success('Record Successfully Deleted','Deleted...');
                     $scope.initCodes();
                 });
             }, function(value) {
@@ -61,7 +61,7 @@ angular
             console.log('saveCode: ', $scope.details);
             Code.saveCodes($scope.details).then(function(response) {
                 console.log('response: ', response);
-                toastr.success('Saved...', 'Record Successfully Saved');
+                toastr.success('Record Successfully Saved','Saved...');
                 $scope.details = {};
             });
         };
@@ -86,7 +86,7 @@ angular
             console.log('updateCode: ', $scope.details);
             Code.updateCode($stateParams.id, $scope.details).then(function(response) {
                 console.log('response: ', response);
-                toastr.success('Updated...', 'Record Successfully Updated');
+                toastr.success('Record Successfully Updated','Updated...');
                 $state.go($state.current, {}, {reload: true});
             });
         };

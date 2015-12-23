@@ -1,5 +1,6 @@
 angular
-    .module('app', ['ngResource', 'ngSanitize', 'ui.router', 'ui.bootstrap', 'angular-loading-bar', 'angularMoment', 'ncy-angular-breadcrumb', 'cgBusy', 'validation', 'validation.rule', 'toastr', 'ngDialog'])
+    .module('app', ['ngResource', 'ngSanitize', 'ui.router', 'ui.bootstrap', 'angular-loading-bar', 'angularMoment', 'ncy-angular-breadcrumb', 'cgBusy', 'validation', 'validation.rule', 'toastr', 'ngDialog', 'firebase'])
+    .constant('firebaseurl', 'https://popping-torch-5033.firebaseio.com')
     .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
             .state('login', {
@@ -51,4 +52,16 @@ angular
     .config(['$validationProvider', function($validationProvider) {
         var defaultMsg;
         var expression;
+
+        $validationProvider
+            .setExpression({
+                matching: function(value, scope, element, attrs) {
+                    return value === attrs.validatorPassword;
+                }
+            })
+            .setDefaultMsg({
+                matching: {
+                    error: 'Passwords do not match.'
+                }
+            })
     }]);

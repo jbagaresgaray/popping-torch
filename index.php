@@ -50,7 +50,7 @@
     <script src="bower_components/angular-validation/dist/angular-validation-rule.js"></script>
     <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <script src="bower_components/ng-dialog/js/ngDialog.min.js"/></script>
-
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 
     <!-- Custom javascript for this app -->
     <script src="public/js/app.js"></script>

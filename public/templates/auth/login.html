@@ -1,11 +1,13 @@
 <div class="container">
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
+    <form class="form-signin" name="Form" role="form">
+        <div cg-busy="myPromise"></div>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="inputEmail" class="form-control" placeholder="Email address" ng-model="login.email" validator="required, email" valid-method="submit">
+        <span id="inputEmail"></span>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <a class="btn btn-lg btn-primary btn-block" ng-click="login()">Sign in</a>
+        <input type="password" name="inputPassword" class="form-control" placeholder="Password" ng-model="login.password" validator="required" valid-method="submit">
+        <span name="inputPassword"></span>
+        <a class="btn btn-lg btn-primary btn-block" ng-click="login.submit(Form)">Sign in</a>
         <div class="form-group" style="margin-top:12px;">
             <div class="col-md-12 control">
                 <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
