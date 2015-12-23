@@ -23,12 +23,6 @@
 
     <!-- Custom styles for this template -->
     <link href="public/css/starter-template.css" rel="stylesheet">
-  </head>
-
-  <body ng-app="app">
-
-    <div data-ui-view></div>
-    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -37,6 +31,10 @@
     <script src="bower_components/lodash/lodash.min.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+
+    <!-- Angular core JavaScript
+    ================================================== -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="bower_components/ui-select/dist/select.min.js"></script>
@@ -59,6 +57,12 @@
     <script src="public/js/controllers.js"></script>
     <script src="public/js/authcontroller.js"></script>
     <script src="public/js/services.js"></script>
+  </head>
+
+  <body ng-app="app">
+
+    <div data-ui-view></div>
+    
   </body>
 </html>
 

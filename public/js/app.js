@@ -1,5 +1,5 @@
 angular
-    .module('app', ['ngResource', 'ngSanitize', 'ui.router', 'ui.bootstrap', 'angular-loading-bar', 'angularMoment', 'ncy-angular-breadcrumb', 'cgBusy', 'validation', 'validation.rule','toastr','ngDialog'])
+    .module('app', ['ngResource', 'ngSanitize', 'ui.router', 'ui.bootstrap', 'angular-loading-bar', 'angularMoment', 'ncy-angular-breadcrumb', 'cgBusy', 'validation', 'validation.rule', 'toastr', 'ngDialog'])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
             .state('login', {
@@ -47,4 +47,8 @@ angular
             });
 
         $urlRouterProvider.otherwise('/login');
-    });
+    })
+    .config(['$validationProvider', function($validationProvider) {
+        var defaultMsg;
+        var expression;
+    }]);
