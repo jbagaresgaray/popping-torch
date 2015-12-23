@@ -64,4 +64,16 @@ angular
                     error: 'Passwords do not match.'
                 }
             })
-    }]);
+    }])
+    .run(function($rootScope, $state, $window, $firebase, $firebaseArray, firebaseurl, Auth, User) {
+        $rootScope.currentUser = {};
+        $rootScope.displayName = {};
+
+        $rootScope.logout = function() {
+            console.log("Logging out from the app");
+            Auth.logout();
+            $rootScope.currentUser = null;
+            $state.go('login');
+        };
+
+    });
